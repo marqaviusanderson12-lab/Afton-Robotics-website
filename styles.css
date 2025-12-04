@@ -29,7 +29,7 @@ body {
 
   /* Subtle grid pattern */
   background-image:
-    url('images/bg-tech.jpeg'), /* Main background image */
+    url('Images/bg-tech.jpeg'), /* Main background image */
     linear-gradient(#00aaff 1px, transparent 1px),
     linear-gradient(90deg, #00aaff 1px, transparent 1px);
   
@@ -640,6 +640,7 @@ input:valid { border: 2px solid green; }
 .info-box {
   animation: fadeIn 2s ease-in;
 }
+
 
 
 
