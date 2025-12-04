@@ -1,0 +1,646 @@
+/* 
+   Independent project style sheet 
+   Filename: styles.css
+
+   Author: Marqavius Anderson  
+   Date:   10/12/2025
+   Independent project 
+*/
+
+/* 
+   RESET & BASE STYLES
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #f5f6fa;
+  background-color: #0a3d62;
+  text-align: center;
+  line-height: 1.6;
+
+  /* Subtle grid pattern */
+  background-image:
+    url('images/bg-tech.jpeg'), /* Main background image */
+    linear-gradient(#00aaff 1px, transparent 1px),
+    linear-gradient(90deg, #00aaff 1px, transparent 1px);
+  
+  background-size: cover, 40px 40px, 40px 40px;
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: center, 0 0, 0 0;
+  background-attachment: fixed; 
+  background-blend-mode: overlay; 
+}
+
+/* ===============================
+   HEADER & NAVIGATION
+================================== */
+header {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 170, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#branding h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00aaff;
+  text-shadow: 0 0 6px #0077b6;
+}
+
+#branding p {
+  font-style: italic;
+  color: #f5f6fa;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+#branding h1 a {
+  text-decoration: none;   
+  color: inherit;          
+  transition: color 0.3s;  
+}
+
+#branding h1 a:hover {
+  color: #007acc;          /* Optional: change color on hover */
+}
+
+#main-nav {
+  margin-top: 15px;
+  background-color: #111;
+  padding: 10px 0;
+  border-top: 1px solid #00aaff44;
+  border-bottom: 1px solid #00aaff44;
+}
+
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: #00aaff;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#main-nav a:hover,
+#main-nav a:focus {
+  background-color: #00aaff;
+  color: #fff;
+  outline: none;
+}
+
+/* Link States */
+a:link {
+  color: #0057b8;
+}
+
+a:visited {
+  color: #7b1fa2;
+}
+
+a:hover {
+  color: #c62828;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #1b5e20;
+}
+
+/* 
+   Main content
+*/
+main {
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2, h3, h4, h5 {
+  color: #00aaff;
+  text-shadow: 0 0 5px #0099cc;
+  margin-bottom: 15px;
+}
+
+p {
+  max-width: 650px;
+  margin: 15px auto;
+  font-size: 1rem;
+}
+
+h2::after {
+  content: " 🔧"; 
+  color: #00aaff;
+}
+
+/* Info Box */
+.info-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00aaff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
+}
+.info-box::before {
+  content: "✨ Featured: ";
+  font-weight: bold;
+  color: #ff4081;
+}
+
+/* Figure and caption */
+figure {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #00aaff;
+  box-shadow: 0 0 10px #00aaff55;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #bde0fe;
+  margin-top: 8px;
+}
+.product-card img {
+  width: 100%;          /* fills the card width */
+  max-width: 250px;     /* shrink images so they don’t get too wide */
+  height: auto;         /* keeps proportions */
+  margin: 0 auto;       /* centers inside the card */
+  object-fit: cover;    /* crops nicely if aspect ratios differ */
+  border-bottom: 2px solid #eee;
+  display: block;
+}
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 10px;       /* place near bottom of video */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;         /* hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .video-controls {
+  opacity: 1;         /* shown when hovering over video */
+}
+
+.video-controls button {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Aside Section */
+aside {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #00aaff;
+  padding: 15px;
+  margin: 30px auto;
+  max-width: 500px;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+/* ===============================
+   LIST STYLING 
+================================== */
+
+/* Base list style (only affects lists inside <main>) */
+main ul, 
+main ol {
+  list-style-position: inside;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 170, 255, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Default list items */
+main li {
+  margin-bottom: 10px;
+  color: #f5f6fa;
+  transition: all 0.2s ease;
+}
+
+main li:hover {
+  color: #bde0fe;
+  transform: translateX(4px);
+}
+
+main ul {
+  list-style-type: disc;
+}
+
+main ol {
+  list-style-type: decimal;
+}
+/* ===============================
+   CONTACT FORM STYLING
+================================== */
+
+form {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 170, 255, 0.5);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 650px;
+  margin: 30px auto;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+  backdrop-filter: blur(4px);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.7);
+}
+
+form label {
+  display: block;
+  font-weight: 700;
+  color: #00aaff;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 170, 255, 0.5);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #f5f6fa;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #00aaff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+/* Checkboxes and Radio Buttons */
+form input[type="checkbox"],
+form input[type="radio"] {
+  accent-color: #00aaff;
+  transform: scale(1.2);
+  margin-right: 6px;
+}
+
+form p {
+  margin-top: 20px;
+  color: #bde0fe;
+  font-weight: 600;
+}
+
+/* Dropdown */
+form select {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Submit Button */
+form button {
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+form button:hover {
+  background-color: #0090dd;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+}
+
+/* Align checkboxes/radios neatly */
+form label[for="animatronics"],
+form label[for="ai"],
+form label[for="contact-email"],
+form label[for="contact-phone"] {
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 15px;
+  color: #f5f6fa;
+}
+
+/* Make sure spacing between form groups looks balanced */
+form br {
+  display: none;
+}
+
+form > *:not(button) {
+  margin-bottom: 15px;
+}
+
+/* Partners Section */
+#partners {
+  margin-top: 40px;
+}
+
+#partners h4 {
+  margin-bottom: 20px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  width: 120px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1) invert(0);
+}
+
+/* 
+   Contact section
+*/
+#contact a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+/* Partner Logos Section */
+#partners {
+  background-color: rgba(10, 61, 98, 0.6);
+  padding: 2rem 1rem;
+  border-top: 1px solid #1e90ff;
+  border-bottom: 1px solid #1e90ff;
+  margin-top: 2rem;
+}
+
+#partners h4 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.4rem;
+  color: #00a8ff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#partners .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#partners .logos img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(40%) brightness(0.95) contrast(1.1);
+  background-color: #ffffff10; /* light transparency for visibility */
+  padding: 0.5rem;
+}
+
+#partners .logos img[alt*="RoboCo"] {
+  background-color: #ffffff; /* bright backdrop to make blue text visible */
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.7);
+  filter: brightness(1.2) contrast(1.3);
+  border: 2px solid rgba(0, 168, 255, 0.6);
+}
+
+#partners .logos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 168, 255, 0.8);
+  filter: grayscale(0%) brightness(1.1) contrast(1.2);
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #00aaff;
+  padding: 12px;
+  text-align: left;
+  color: #f5f6fa;
+}
+
+.product-table th {
+  background-color: #0077b6;
+  color: #ffffff;
+  font-weight: bold;
+}
+/* 
+   Footer
+ */
+footer {
+  background-color: #020202;
+  color: #f5f6fa;
+  padding: 30px 15px;
+  border-top: 2px solid #00aaff;
+  box-shadow: 0 -2px 10px rgba(0, 170, 255, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.footer-content h4, 
+.footer-content h5 {
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content li {
+  margin: 5px 0;
+}
+
+.footer-content a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================== */
+
+/* Mobile styles */
+/* Mobile styles */
+@media (max-width: 700px) {
+  #main-nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-box,
+  aside {
+    max-width: 90%;
+  }
+
+  figure {
+    width: 90%;
+  }
+
+  .logos img {
+    width: 100px;
+  }
+}
+
+/* Widescreen styles */
+@media (min-width: 1024px) {
+  .info-box {
+    max-width: 900px;
+  }
+
+  .logos img {
+    width: 160px;
+  }
+
+  figure {
+    max-width: 600px;
+  }
+}
+
+/* Gradient header */
+header {
+  background: linear-gradient(to right, #1a1a1a, #3333ff);
+  color: white;
+}
+
+/* Generated content */
+.info-box::before {
+  content: "✨ Featured: ";
+  font-weight: bold;
+  color: #ff4081;
+}
+
+/* Form feedback */
+input:invalid { border: 2px solid red; }
+input:valid { border: 2px solid green; }
+
+/* CSS shape */
+.logos img { border-radius: 50%; }
+
+/* Feature detection */
+@supports (display: grid) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Transform + transition */
+.product-card img {
+  transition: transform 0.3s ease-in-out;
+}
+.product-card img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.info-box {
+  animation: fadeIn 2s ease-in;
+}
+
+
+
+
